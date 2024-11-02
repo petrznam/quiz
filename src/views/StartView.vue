@@ -6,6 +6,9 @@
 </template>
 <script>
 export default{
+      created(){
+          document.getElementsByTagName('html')[0].style.background = `url(${require('../assets/68e53a77-c2f3-5f2a-a376-d2ac0d61e91b.jpg')}) center`
+      },
  data(){
     return{
         name: ""
