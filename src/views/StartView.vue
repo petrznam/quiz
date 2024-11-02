@@ -2,12 +2,12 @@
     <h1>Стартовый экран викторины</h1>
     <h3>введите своё имя</h3>
     <input class="name-input" type="text" v-model="name">
-    <button>Найти соперника</button>
+    <button class="button">Найти соперника</button>
 </template>
 <script>
 export default{
       created(){
-          document.getElementsByTagName('html')[0].style.background = `url(${require('../assets/68e53a77-c2f3-5f2a-a376-d2ac0d61e91b.jpg')}) center`
+          document.getElementsByTagName('html')[0].style.background = `url(${require('../assets/68e53a77-c2f3-5f2a-a376-d2ac0d61e91b.jpg')})center`
       },
  data(){
     return{
@@ -22,5 +22,10 @@ export default{
     width: 500px;
     height: 50px;
     font-family: "Rubik", sans-serif;
+}
+</style>
+<style scoped>
+.button{
+    background-color: darkgoldenrod;
 }
 </style>
