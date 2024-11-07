@@ -6,7 +6,7 @@
             <p>Для начала введите своё имя и нажмите кнопку "найти соперника"</p>
         </div>
         <input class="name-input" type="text" v-model="name" placeholder="Введите ваше имя">
-        <button class="button">Найти соперника</button>
+        <button class="button" @click="startSearch">Найти соперника</button>
     </main>
 </template>
 <script>
@@ -14,6 +14,11 @@ export default{
     data(){
         return{
             name: ""
+        }
+    },
+    methods : {
+        startSearch(){
+            this.$router.push("quiz");
         }
     }
 }
