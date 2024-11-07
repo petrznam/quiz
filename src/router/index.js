@@ -6,6 +6,11 @@ const routes = [
     name: 'start',
     component: () => import('../views/StartView.vue')
   },
+  {
+    path: '/quiz',
+    name: 'quiz',
+    component: () => import('../views/QuizView.vue')
+  },
 ]
 
 const router = createRouter({
