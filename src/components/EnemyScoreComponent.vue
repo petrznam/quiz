@@ -15,7 +15,8 @@ export default {
 </script>
 <style scoped>
 .enemy-score{
-    width: 700px;
+    width: 199px;
     height: 100px;
+    background-color: #9c9b75;
 }
 </style>
