@@ -10,6 +10,10 @@
     </main>
 </template>
 <script>
+import { useQuizStore } from '@/store/quiz_store';
+import { mapActions, mapState } from 'pinia';
+
+
 export default{
     data(){
         return{
@@ -19,7 +23,14 @@ export default{
     methods : {
         startSearch(){
             this.$router.push("quiz");
-        }
+        },
+        ...mapActions(useQuizStore, ["updateQuizes"])
+    },
+    computed: {
+        ...mapState(useQuizStore, ["quizes"])
+    },
+    mounted(){
+        this.updateQuizes().then(() => console.log(this.quizes));
     }
 }
 </script>

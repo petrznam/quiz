@@ -14,7 +14,7 @@ export default{
 }
 </script>
 
-<style>
+<style scoped>
 main{
     width: 700px;
     height: 500px;
