@@ -1,14 +1,15 @@
 <template>
     <main>
         <ul>
-            <li><router-link :to="{name : 'start'}">Стартовый экран (сделаем после входа)</router-link></li>
-            <li><router-link :to="{name : 'quiz'}">Экран викторины</router-link></li>
+            <div><router-link :to="{name : 'start'}">Стартовый экран (сделаем после входа)</router-link></div>
+            <div><router-link :to="{name : 'quiz'}">Экран викторины</router-link></div>
+            <div><router-link :to="{name : 'signup'}">Регистрация</router-link></div>
         </ul>
 
-        <ul v-if="quizes.length > 0">
-            <li v-for="quiz in quizes" :key="quiz.id">{{ quiz.title }}</li>
+        <div class="quiz-cards" v-if="quizes.length > 0">
+            <div class="quiz-card" v-for="quiz in quizes" :key="quiz.id">{{ quiz.title }} </div>
 
-        </ul>
+        </div>
     </main>
 </template>
 
@@ -33,3 +34,18 @@ export default {
 }
 
 </script>
+
+<style scoped>
+
+.quiz-card{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+}
+.quiz-cards{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+</style>
