@@ -5,6 +5,9 @@ export const useQuizStore = defineStore("quizes", {
     state: () => ({
         quizes: []
     }),
+    getters: {
+        quizById : (state) => (id) => state.quizes.find(quiz => quiz.id == id)
+    },
     actions: {
         async updateQuizes (){
             this.quizes = await getquizes();
