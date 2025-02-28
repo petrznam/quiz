@@ -7,7 +7,7 @@ const routes = [
     component: () => import('../views/MainView.vue')
   },
   {
-    path: '/quiz',
+    path: '/quiz/:id',
     name: 'quiz',
     component: () => import('../views/QuizView.vue')
   },

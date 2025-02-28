@@ -2,12 +2,13 @@
     <main>
         <ul>
             <div><router-link :to="{name : 'start'}">Стартовый экран (сделаем после входа)</router-link></div>
-            <div><router-link :to="{name : 'quiz'}">Экран викторины</router-link></div>
             <div><router-link :to="{name : 'signup'}">Регистрация</router-link></div>
         </ul>
 
         <div class="quiz-cards" v-if="quizes.length > 0">
-            <div class="quiz-card" v-for="quiz in quizes" :key="quiz.id">{{ quiz.title }} </div>
+            <router-link v-for="quiz in quizes" :key="quiz.id" :to="{name : 'quiz', params : {id : quiz.id}}">
+                <div class="quiz-card">{{ quiz.title }} </div>
+            </router-link>
 
         </div>
     </main>
