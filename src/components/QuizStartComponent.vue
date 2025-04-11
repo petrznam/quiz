@@ -2,7 +2,7 @@
     <div class="start-quiz-view">
         <h2>{{ title }}</h2>
         <p>{{ description }}</p>
-        <button class="button">Начать</button>
+        <button class="button" @click="startQuiz">Начать</button>
     </div>
 </template>
 <script>
@@ -10,6 +10,11 @@ export default{
     props : {
         title : String,
         description: String
+    },
+    methods : {
+        startQuiz(){
+            this.$emit("startQuiz");
+        }
     }
 }
 </script>

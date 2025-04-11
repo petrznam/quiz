@@ -1,16 +1,20 @@
 import { defineStore } from "pinia";
-import { getquizes } from "@/api/quiz";
+import { getQuizes, getQuiz } from "@/api/quiz";
 
 export const useQuizStore = defineStore("quizes", {
     state: () => ({
-        quizes: []
+        quizes: [],
+        openedQuiz: null
     }),
     getters: {
         quizById : (state) => (id) => state.quizes.find(quiz => quiz.id == id)
     },
     actions: {
         async updateQuizes (){
-            this.quizes = await getquizes();
+            this.quizes = await getQuizes();
+        },
+        async updateOneQuiz(id){
+            this.openedQuiz = await getQuiz(id);
         }
     }
 })

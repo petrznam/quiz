@@ -1,15 +1,30 @@
 <template>
     <main>
         <h1>{{ question }}</h1>
-        <input class="question-input" type="text" placeholder="введите ответ">
-        <button class="button">Далее</button>
+        <input class="question-input" type="text" placeholder="введите ответ" v-model="answer">
+        <button class="button" @click="nextQuestion">Далее</button>
     </main>
 </template>
 
 <script>
 export default{
+    data(){
+        return {
+            answer : ""
+        }
+    },
     props: {
         question: String
+    },
+    methods : {
+        nextQuestion(){
+            if(this.answer.length == 0) {
+                alert("Вы не написали ответ");
+                return;
+            }
+            this.$emit("nextQuestion", this.answer);
+            this.answer = "";
+        }
     }
 }
 </script>
